@@ -61,19 +61,22 @@ export async function GET(request: NextRequest) {
     // 1. Fetch Lomba deadlines
     try {
       const lombaParams = new URLSearchParams();
+      // Removed is_deleted filter as field doesn't exist in current schema
       lombaParams.set('filter', JSON.stringify({
         _and: [
           { status: { _in: ['open', 'upcoming'] } },
           { deadline: { _gte: startDateStr } },
           { deadline: { _lte: endDateStr } },
-          { is_deleted: { _eq: false } },
         ]
       }));
       lombaParams.set('fields', 'id,nama_lomba,slug,deadline,lokasi,kategori,tingkat');
       lombaParams.set('sort', 'deadline');
       lombaParams.set('limit', '50');
 
-      const lombaRes = await fetch(`${DIRECTUS_URL}/items/apm_lomba?${lombaParams.toString()}`);
+      const lombaUrl = `${DIRECTUS_URL}/items/apm_lomba?${lombaParams.toString()}`;
+      console.log('Fetching lomba for calendar:', lombaUrl);
+
+      const lombaRes = await fetch(lombaUrl);
 
       if (lombaRes.ok) {
         const lombaData = await lombaRes.json();
@@ -103,19 +106,22 @@ export async function GET(request: NextRequest) {
     // 2. Fetch Expo events
     try {
       const expoParams = new URLSearchParams();
+      // Removed is_deleted filter as field doesn't exist in current schema
       expoParams.set('filter', JSON.stringify({
         _and: [
           { status: { _in: ['upcoming', 'ongoing'] } },
           { tanggal_mulai: { _gte: startDateStr } },
           { tanggal_mulai: { _lte: endDateStr } },
-          { is_deleted: { _eq: false } },
         ]
       }));
       expoParams.set('fields', 'id,nama_event,slug,tanggal_mulai,tanggal_selesai,lokasi,tema');
       expoParams.set('sort', 'tanggal_mulai');
       expoParams.set('limit', '50');
 
-      const expoRes = await fetch(`${DIRECTUS_URL}/items/apm_expo?${expoParams.toString()}`);
+      const expoUrl = `${DIRECTUS_URL}/items/apm_expo?${expoParams.toString()}`;
+      console.log('Fetching expo for calendar:', expoUrl);
+
+      const expoRes = await fetch(expoUrl);
 
       if (expoRes.ok) {
         const expoData = await expoRes.json();
@@ -142,12 +148,12 @@ export async function GET(request: NextRequest) {
     if (userNim) {
       try {
         const calendarParams = new URLSearchParams();
+        // Removed is_deleted filter as field doesn't exist in current schema
         calendarParams.set('filter', JSON.stringify({
           _and: [
             { user_nim: { _eq: userNim } },
             { tanggal: { _gte: startDateStr } },
             { tanggal: { _lte: endDateStr } },
-            { is_deleted: { _eq: false } },
           ]
         }));
         calendarParams.set('fields', 'id,title,event_type,tanggal,lokasi,deskripsi,link');

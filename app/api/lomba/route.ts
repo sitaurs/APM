@@ -45,9 +45,9 @@ export async function GET(request: NextRequest) {
     params.set('limit', slug ? '1' : limit.toString());
     params.set('offset', slug ? '0' : ((page - 1) * limit).toString());
     params.set('sort', '-date_created');
-    // Include more fields for detail view when querying by slug
+    // Use correct field names from Directus schema
     const fields = slug
-      ? 'id,nama_lomba,slug,deadline,kategori,tingkat,status,poster,biaya,lokasi,is_featured,is_urgent,tags,deskripsi,penyelenggara,peserta_info,hadiah_info,syarat_info,timeline_info,kontak_email,kontak_phone,kontak_website,link_pendaftaran'
+      ? 'id,nama_lomba,slug,deadline,kategori,tingkat,status,poster,biaya,lokasi,is_featured,is_urgent,tags,deskripsi,penyelenggara,syarat_ketentuan,hadiah,kontak_panitia,link_pendaftaran,tanggal_pelaksanaan'
       : 'id,nama_lomba,slug,deadline,kategori,tingkat,status,poster,biaya,lokasi,is_featured,is_urgent,tags';
     params.set('fields', fields);
 
@@ -55,11 +55,15 @@ export async function GET(request: NextRequest) {
       params.set('filter', JSON.stringify(filter));
     }
 
-    const response = await fetch(`${DIRECTUS_URL}/items/apm_lomba?${params.toString()}`, {
+    const url = `${DIRECTUS_URL}/items/apm_lomba?${params.toString()}`;
+    console.log('Fetching from:', url);
+
+    const response = await fetch(url, {
       next: { revalidate: 60 }, // Cache for 60 seconds
     });
 
     if (!response.ok) {
+      console.error('Directus error:', response.status, await response.text());
       throw new Error(`Directus error: ${response.status}`);
     }
 
@@ -68,34 +72,48 @@ export async function GET(request: NextRequest) {
     // Use public Directus URL for asset URLs (browser accessible)
     const publicDirectusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || DIRECTUS_URL;
 
-    // Transform data for frontend
-    const data = result.data.map((item: Record<string, unknown>) => ({
-      id: String(item.id),
-      slug: item.slug,
-      title: item.nama_lomba,
-      deadline: item.deadline,
-      deadlineDisplay: item.deadline ? new Date(item.deadline as string).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) : null,
-      kategori: String(item.kategori || '').charAt(0).toUpperCase() + String(item.kategori || '').slice(1),
-      tingkat: String(item.tingkat || '').charAt(0).toUpperCase() + String(item.tingkat || '').slice(1),
-      status: item.status || 'open',
-      isUrgent: item.is_urgent,
-      isFree: item.biaya === 0,
-      posterUrl: item.poster ? `${publicDirectusUrl}/assets/${item.poster}?width=400` : null,
-      // Detail fields (only present when querying by slug)
-      deskripsi: item.deskripsi || '',
-      penyelenggara: item.penyelenggara || '',
-      lokasi: item.lokasi || '',
-      biaya: item.biaya || 0,
-      peserta: item.peserta_info || '',
-      hadiah: item.hadiah_info || [],
-      syarat: item.syarat_info || [],
-      timeline: item.timeline_info || [],
-      kontakEmail: item.kontak_email || '',
-      kontakPhone: item.kontak_phone || '',
-      kontakWebsite: item.kontak_website || '',
-      linkPendaftaran: item.link_pendaftaran || '',
-      tags: item.tags || [],
-    }));
+    // Transform data for frontend - use correct Directus field names
+    const data = result.data.map((item: Record<string, unknown>) => {
+      // Parse kontak_panitia JSON if it's a string
+      let kontak = item.kontak_panitia;
+      if (typeof kontak === 'string') {
+        try { kontak = JSON.parse(kontak); } catch { kontak = null; }
+      }
+
+      // Parse hadiah JSON if it's a string
+      let hadiah = item.hadiah;
+      if (typeof hadiah === 'string') {
+        try { hadiah = JSON.parse(hadiah); } catch { hadiah = []; }
+      }
+
+      return {
+        id: String(item.id),
+        slug: item.slug,
+        title: item.nama_lomba,
+        deadline: item.deadline,
+        deadlineDisplay: item.deadline ? new Date(item.deadline as string).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) : null,
+        kategori: String(item.kategori || '').charAt(0).toUpperCase() + String(item.kategori || '').slice(1),
+        tingkat: String(item.tingkat || '').charAt(0).toUpperCase() + String(item.tingkat || '').slice(1),
+        status: item.status || 'open',
+        isUrgent: item.is_urgent,
+        isFree: item.biaya === 0,
+        posterUrl: item.poster ? `${publicDirectusUrl}/assets/${item.poster}?width=400` : null,
+        // Detail fields
+        deskripsi: item.deskripsi || '',
+        penyelenggara: item.penyelenggara || '',
+        lokasi: item.lokasi || '',
+        biaya: item.biaya || 0,
+        peserta: '', // Not stored in current schema
+        hadiah: Array.isArray(hadiah) ? hadiah : [],
+        syarat: item.syarat_ketentuan || '',
+        timeline: [], // Not stored in current schema
+        kontakEmail: (kontak as Record<string, string>)?.email || '',
+        kontakPhone: (kontak as Record<string, string>)?.phone || (kontak as Record<string, string>)?.whatsapp || '',
+        kontakWebsite: '',
+        linkPendaftaran: item.link_pendaftaran || '',
+        tags: Array.isArray(item.tags) ? item.tags : [],
+      };
+    });
 
     return NextResponse.json({ data });
   } catch (error) {
