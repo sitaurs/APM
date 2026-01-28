@@ -159,36 +159,51 @@ export async function POST(request: NextRequest) {
       status: body.status === 'upcoming' ? 'coming-soon' : (body.status === 'ongoing' ? 'open' : 'closed'),
     };
 
-    // Transform hadiah from HTML string to JSON array
+    // Transform hadiah to JSON array (Directus expects raw object/array, NOT stringified)
     if (body.hadiah) {
       if (typeof body.hadiah === 'string') {
-        // Convert HTML string to JSON array format expected by Directus
-        transformedData.hadiah = JSON.stringify([{
-          peringkat: 'Informasi Hadiah',
-          nominal: '',
-          keterangan: body.hadiah
-        }]);
+        // Try to parse if it's already JSON string
+        try {
+          transformedData.hadiah = JSON.parse(body.hadiah);
+        } catch {
+          // Convert plain text to JSON array format expected by Directus
+          transformedData.hadiah = [{
+            peringkat: 'Informasi Hadiah',
+            nominal: '',
+            keterangan: body.hadiah
+          }];
+        }
+      } else if (Array.isArray(body.hadiah)) {
+        // Already an array, use directly
+        transformedData.hadiah = body.hadiah;
       } else {
-        transformedData.hadiah = JSON.stringify(body.hadiah);
+        // Wrap object in array
+        transformedData.hadiah = [body.hadiah];
       }
     } else {
       transformedData.hadiah = null;
     }
 
-    // Transform kontak_panitia to JSON object
+    // Transform kontak_panitia to JSON object (raw object, NOT stringified)
     if (body.cp_nama || body.cp_whatsapp) {
-      transformedData.kontak_panitia = JSON.stringify({
+      transformedData.kontak_panitia = {
         nama: body.cp_nama || '',
-        email: '',
+        email: body.cp_email || '',
         phone: body.cp_whatsapp || '',
         whatsapp: body.cp_whatsapp || ''
-      });
+      };
     } else {
       transformedData.kontak_panitia = null;
     }
 
-    // Set tags as null (not used in form)
-    transformedData.tags = null;
+    // Set tags - raw array or null
+    if (body.tags && Array.isArray(body.tags)) {
+      transformedData.tags = body.tags;
+    } else if (typeof body.tags === 'string' && body.tags.trim()) {
+      transformedData.tags = body.tags.split(',').map((t: string) => t.trim()).filter(Boolean);
+    } else {
+      transformedData.tags = null;
+    }
 
     console.log('Transformed data for Directus:', JSON.stringify(transformedData, null, 2));
 
