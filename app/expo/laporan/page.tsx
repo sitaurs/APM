@@ -18,6 +18,13 @@ interface ExpoReport {
     rating: number;
 }
 
+interface ExpoStats {
+    totalVisitors: number;
+    totalProjects: number;
+    avgRating: number;
+    reports: ExpoReport[];
+}
+
 // Fallback static data
 const staticStats = {
     totalVisitors: 5500,
@@ -30,7 +37,7 @@ const staticStats = {
     ],
 };
 
-async function getExpoStats() {
+async function getExpoStats(): Promise<ExpoStats> {
     try {
         const params = new URLSearchParams();
         params.set('filter', JSON.stringify({ status: { _eq: 'past' } }));
