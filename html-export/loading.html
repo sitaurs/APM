@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memuat... | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="min-height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center; padding: 24px;">
+    <div style="text-align: center;">
+      
+      <!-- Spinner -->
+      <svg class="animate-spin" style="width: 48px; height: 48px; color: #0B4F94; margin: 0 auto 16px;" fill="none" viewBox="0 0 24 24">
+        <circle style="opacity: 0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path style="opacity: 0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      
+      <p style="color: #64748B; margin: 0; font-size: 15px;">Memuat halaman...</p>
+      
+    </div>
+  </main>
+
+</body>
+</html>
+
+

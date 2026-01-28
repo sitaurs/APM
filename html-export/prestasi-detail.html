@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCampus - Juara 1 Gemastik 2023 | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0B4F94; background-color: rgba(11,79,148,0.08);">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <section style="background-color: white; border-bottom: 1px solid #e5e7eb;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px;">
+      <nav style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+        <a href="/" style="color: #64748B; text-decoration: none;">Beranda</a>
+        <span style="color: #d1d5db;">â€º</span>
+        <a href="/prestasi" style="color: #64748B; text-decoration: none;">Prestasi</a>
+        <span style="color: #d1d5db;">â€º</span>
+        <span style="color: #0F172A; font-weight: 500;">SmartCampus</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main style="max-width: 1280px; margin: 0 auto; padding: 32px 24px;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px;">
+      
+      <!-- Left Column -->
+      <div>
+        <!-- Hero -->
+        <div style="height: 360px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 20px; position: relative; overflow: hidden; margin-bottom: 24px;">
+          <!-- Trophy Icon -->
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <div style="width: 120px; height: 120px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 60px; height: 60px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            </div>
+          </div>
+          <!-- Badge -->
+          <div style="position: absolute; top: 24px; left: 24px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #FEF3C7; color: #92400E; font-size: 14px; font-weight: 600; border-radius: 100px;">
+              <span style="font-size: 18px;">ðŸ†</span> Juara 1
+            </span>
+          </div>
+          <!-- Title -->
+          <div style="position: absolute; bottom: 24px; left: 24px; right: 24px;">
+            <h1 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 700; color: white; margin: 0 0 8px;">SmartCampus</h1>
+            <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 16px;">Sistem Manajemen Kampus Berbasis IoT</p>
+          </div>
+        </div>
+        
+        <!-- Quick Info -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px;">
+          <div style="background-color: white; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="width: 40px; height: 40px; background-color: rgba(11,79,148,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <svg style="width: 20px; height: 20px; color: #0B4F94;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+            </div>
+            <p style="margin: 0; font-size: 12px; color: #64748B;">Kompetisi</p>
+            <p style="margin: 4px 0 0; font-weight: 600; color: #0F172A; font-size: 14px;">Gemastik XVI</p>
+          </div>
+          <div style="background-color: white; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="width: 40px; height: 40px; background-color: rgba(255,127,17,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <svg style="width: 20px; height: 20px; color: #FF7F11;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <p style="margin: 0; font-size: 12px; color: #64748B;">Tahun</p>
+            <p style="margin: 4px 0 0; font-weight: 600; color: #0F172A; font-size: 14px;">2023</p>
+          </div>
+          <div style="background-color: white; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="width: 40px; height: 40px; background-color: rgba(16,185,129,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <svg style="width: 20px; height: 20px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            </div>
+            <p style="margin: 0; font-size: 12px; color: #64748B;">Tim</p>
+            <p style="margin: 4px 0 0; font-weight: 600; color: #0F172A; font-size: 14px;">5 Anggota</p>
+          </div>
+          <div style="background-color: white; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="width: 40px; height: 40px; background-color: rgba(139,92,246,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <svg style="width: 20px; height: 20px; color: #8B5CF6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <p style="margin: 0; font-size: 12px; color: #64748B;">Kategori</p>
+            <p style="margin: 4px 0 0; font-weight: 600; color: #0F172A; font-size: 14px;">IoT & Smart City</p>
+          </div>
+        </div>
+        
+        <!-- Description -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">ðŸ“– Deskripsi Proyek</h2>
+          <div style="color: #4b5563; font-size: 15px; line-height: 1.8;">
+            <p style="margin: 0 0 16px;">SmartCampus adalah sistem terintegrasi untuk manajemen kampus berbasis Internet of Things (IoT) yang dirancang untuk meningkatkan efisiensi operasional dan kenyamanan civitas akademika.</p>
+            <p style="margin: 0 0 16px;">Sistem ini mencakup pengelolaan smart lighting, monitoring kehadiran real-time, sistem parkir otomatis, dan dashboard analytics untuk pengambilan keputusan berbasis data.</p>
+            <p style="margin: 0;">Proyek ini berhasil meraih Juara 1 pada kompetisi Gemastik XVI kategori IoT & Smart City dengan mengalahkan lebih dari 200 tim dari seluruh Indonesia.</p>
+          </div>
+        </div>
+        
+        <!-- Features -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">âœ¨ Fitur Utama</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Smart Lighting Control</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Real-time Attendance</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Automated Parking</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Analytics Dashboard</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Energy Monitoring</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #F0FDF4; border-radius: 10px;">
+              <div style="width: 32px; height: 32px; background-color: #10B981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span style="font-size: 14px; color: #0F172A;">Mobile App Integration</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">ðŸ› ï¸ Teknologi</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">React Native</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">Node.js</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">Arduino</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">Raspberry Pi</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">MQTT</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">MongoDB</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">TensorFlow</span>
+            <span style="display: inline-block; padding: 8px 16px; background-color: #F3F6F9; color: #0F172A; font-size: 14px; border-radius: 8px;">Docker</span>
+          </div>
+        </div>
+        
+        <!-- Gallery -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px;">
+          <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">ðŸ“¸ Galeri</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 32px; height: 32px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 32px; height: 32px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 32px; height: 32px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Sidebar -->
+      <div>
+        <!-- Team Card -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 20px;">ðŸ‘¥ Tim</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- Team Leader -->
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: #FEF3C7; border-radius: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #F59E0B, #D97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">AS</div>
+              <div style="flex: 1;">
+                <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Andi Saputra</p>
+                <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Informatika 2021</p>
+              </div>
+              <span style="display: inline-block; padding: 4px 8px; background-color: #F59E0B; color: white; font-size: 10px; font-weight: 600; border-radius: 4px;">KETUA</span>
+            </div>
+            
+            <!-- Members -->
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #0B4F94, #00A8E8); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">BW</div>
+              <div>
+                <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Budi Wijaya</p>
+                <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Informatika 2021</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #10B981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">CA</div>
+              <div>
+                <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Citra Amelia</p>
+                <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Sistem Informasi 2021</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #8B5CF6, #7C3AED); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">DP</div>
+              <div>
+                <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Dimas Pratama</p>
+                <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Teknik Elektro 2020</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #EC4899, #DB2777); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">ES</div>
+              <div>
+                <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Eka Sari</p>
+                <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Desain Komunikasi Visual 2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Supervisor -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">ðŸŽ“ Dosen Pembimbing</h3>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #64748B, #475569); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">DR</div>
+            <div>
+              <p style="margin: 0; font-weight: 600; color: #0F172A; font-size: 14px;">Dr. Ir. Hartono, M.T.</p>
+              <p style="margin: 2px 0 0; color: #64748B; font-size: 12px;">Fakultas Teknik</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Links -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+          <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">ðŸ”— Tautan</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #F3F6F9; border-radius: 10px; text-decoration: none; color: #0F172A; font-size: 14px; font-weight: 500;">
+              <svg style="width: 18px; height: 18px; color: #0B4F94;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+              GitHub Repository
+            </a>
+            <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #F3F6F9; border-radius: 10px; text-decoration: none; color: #0F172A; font-size: 14px; font-weight: 500;">
+              <svg style="width: 18px; height: 18px; color: #EF4444;" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+              Demo Video
+            </a>
+            <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #F3F6F9; border-radius: 10px; text-decoration: none; color: #0F172A; font-size: 14px; font-weight: 500;">
+              <svg style="width: 18px; height: 18px; color: #0B4F94;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Documentation
+            </a>
+          </div>
+        </div>
+        
+        <!-- Share -->
+        <div style="background-color: white; border-radius: 16px; padding: 24px;">
+          <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 16px;">Bagikan</h3>
+          <div style="display: flex; gap: 8px;">
+            <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; background-color: #1877F2; color: white; border-radius: 8px; text-decoration: none;">
+              <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+            </a>
+            <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; background-color: #1DA1F2; color: white; border-radius: 8px; text-decoration: none;">
+              <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+            </a>
+            <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; background-color: #0077B5; color: white; border-radius: 8px; text-decoration: none;">
+              <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+            </a>
+            <button style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; background-color: #F3F6F9; color: #64748B; border-radius: 8px; border: none; cursor: pointer;">
+              <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Related Prestasi -->
+    <section style="margin-top: 48px;">
+      <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 700; color: #0F172A; margin: 0 0 24px;">Prestasi Terkait</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        
+        <div style="background-color: white; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height: 160px; background: linear-gradient(135deg, #0B4F94 0%, #00A8E8 100%); position: relative;">
+            <span style="position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background-color: #C0C0C0; color: white; font-size: 11px; font-weight: 600; border-radius: 100px;">ðŸ¥ˆ Juara 2</span>
+          </div>
+          <div style="padding: 16px;">
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 8px;">EcoTrack App</h3>
+            <p style="color: #64748B; font-size: 13px; margin: 0;">Aplikasi tracking jejak karbon</p>
+          </div>
+        </div>
+        
+        <div style="background-color: white; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height: 160px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); position: relative;">
+            <span style="position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background-color: #F59E0B; color: white; font-size: 11px; font-weight: 600; border-radius: 100px;">ðŸ¥‡ Juara 1</span>
+          </div>
+          <div style="padding: 16px;">
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 8px;">HealthBot AI</h3>
+            <p style="color: #64748B; font-size: 13px; margin: 0;">Chatbot kesehatan berbasis AI</p>
+          </div>
+        </div>
+        
+        <div style="background-color: white; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height: 160px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); position: relative;">
+            <span style="position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background-color: #CD7F32; color: white; font-size: 11px; font-weight: 600; border-radius: 100px;">ðŸ¥‰ Juara 3</span>
+          </div>
+          <div style="padding: 16px;">
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: #0F172A; margin: 0 0 8px;">AgriSense</h3>
+            <p style="color: #64748B; font-size: 13px; margin: 0;">Monitoring pertanian pintar</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #0B4F94; color: white; padding: 48px 24px 24px; margin-top: 48px;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 32px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div style="width: 32px; height: 32px; background-color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #0B4F94; font-weight: bold; font-size: 12px;">APM</span>
+            </div>
+            <span style="font-weight: bold; font-size: 18px;">APM Portal</span>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.7; margin: 0;">Platform digital untuk mendorong dan mendokumentasikan prestasi mahasiswa Indonesia.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin: 0 0 16px;">Menu</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="/lomba" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Lomba</a>
+            <a href="/prestasi" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Prestasi</a>
+            <a href="/expo" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Expo</a>
+            <a href="/kalender" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Kalender</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin: 0 0 16px;">Resources</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="/resources" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Panduan</a>
+            <a href="/about" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Tentang APM</a>
+            <a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin: 0 0 16px;">Kontak</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="color: rgba(255,255,255,0.7); font-size: 14px;">info@apm.ac.id</span>
+            <span style="color: rgba(255,255,255,0.7); font-size: 14px;">+62 21 1234 5678</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center;">
+        <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 0;">Â© 2024 APM Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

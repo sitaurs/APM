@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Prestasi | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0B4F94; background-color: rgba(11,79,148,0.05);">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="position: relative; width: 256px;">
+            <input type="text" placeholder="Cari lomba, prestasi, expo..." style="width: 100%; padding: 8px 12px 8px 36px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: #f9fafb;">
+            <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1;">
+    
+    <!-- Breadcrumb -->
+    <div style="background-color: white; border-bottom: 1px solid #f1f1f1; padding: 12px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <nav style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+          <a href="/" style="color: #64748B; text-decoration: none;">Beranda</a>
+          <svg style="width: 16px; height: 16px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <span style="color: #0B4F94; font-weight: 500;">Galeri Prestasi</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <section style="background: linear-gradient(to right, #0B4F94, #00A8E8); color: white; padding: 32px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <h1 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 700; margin: 0 0 8px;">Galeri Prestasi</h1>
+            <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 16px;">Kumpulan prestasi membanggakan dari mahasiswa berprestasi</p>
+          </div>
+          <!-- Stats -->
+          <div style="display: flex; gap: 24px;">
+            <div style="text-align: center;">
+              <div style="font-size: 32px; font-weight: 700;">5,247</div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.8);">Total Prestasi</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 32px; font-weight: 700;">1,823</div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.8);">Tahun Ini</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 32px; font-weight: 700;">342</div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.8);">Internasional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievement Highlights -->
+    <section style="background-color: white; padding: 24px 0; border-bottom: 1px solid #f1f1f1;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          
+          <!-- Highlight 1 -->
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background-color: #FEF3C7; border-radius: 12px;">
+            <div style="width: 48px; height: 48px; background-color: #FFD700; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 24px; height: 24px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #92400E;">1,245</div>
+              <div style="font-size: 13px; color: #B45309;">Juara 1</div>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background-color: #F1F5F9; border-radius: 12px;">
+            <div style="width: 48px; height: 48px; background-color: #C0C0C0; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 24px; height: 24px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #475569;">987</div>
+              <div style="font-size: 13px; color: #64748B;">Juara 2</div>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background-color: #FED7AA; border-radius: 12px;">
+            <div style="width: 48px; height: 48px; background-color: #CD7F32; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 24px; height: 24px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #9A3412;">654</div>
+              <div style="font-size: 13px; color: #C2410C;">Juara 3</div>
+            </div>
+          </div>
+
+          <!-- Highlight 4 -->
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background-color: #E0E7FF; border-radius: 12px;">
+            <div style="width: 48px; height: 48px; background-color: #6366F1; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 24px; height: 24px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #4338CA;">2,361</div>
+              <div style="font-size: 13px; color: #6366F1;">Penghargaan Lain</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter & Content -->
+    <section style="padding: 24px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        
+        <!-- Filter Bar -->
+        <div style="background-color: white; border-radius: 12px; padding: 16px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <!-- Search -->
+            <div style="position: relative; flex: 1; min-width: 280px;">
+              <input type="text" placeholder="Cari prestasi, nama tim, atau lomba..." style="width: 100%; padding: 10px 14px 10px 40px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: #f9fafb;">
+              <svg style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+
+            <!-- Filters -->
+            <select style="padding: 10px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: white;">
+              <option>Semua Tahun</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+
+            <select style="padding: 10px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: white;">
+              <option>Semua Tingkat</option>
+              <option>Internasional</option>
+              <option>Nasional</option>
+              <option>Regional</option>
+            </select>
+
+            <select style="padding: 10px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: white;">
+              <option>Semua Kategori</option>
+              <option>Teknologi</option>
+              <option>Bisnis</option>
+              <option>Akademik</option>
+              <option>Seni</option>
+            </select>
+
+            <select style="padding: 10px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: white;">
+              <option>Semua Peringkat</option>
+              <option>Juara 1</option>
+              <option>Juara 2</option>
+              <option>Juara 3</option>
+              <option>Penghargaan Lain</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results Info -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <p style="font-size: 14px; color: #64748B; margin: 0;">Menampilkan <strong style="color: #0F172A;">9</strong> dari <strong style="color: #0F172A;">5,247</strong> prestasi</p>
+          <select style="padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: white;">
+            <option>Urutkan: Terbaru</option>
+            <option>Peringkat Tertinggi</option>
+            <option>Tingkat Tertinggi</option>
+          </select>
+        </div>
+
+        <!-- Prestasi Grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          
+          <!-- Prestasi Card 1 - Juara 1 -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #FFD700; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                  <span style="font-size: 12px; background-color: #FEF3C7; color: #F59E0B; padding: 2px 8px; border-radius: 4px;">Internasional</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Juara 1 - ICPC World Finals</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Tim Competitive Programming</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #E6F0F9; color: #0B4F94; padding: 4px 8px; border-radius: 4px;">Teknologi</span>
+                  <span style="font-size: 12px; color: #64748B;">2026</span>
+                </div>
+              </div>
+            </div>
+            <!-- Team Members -->
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; margin-left: -4px;">
+                  <div style="width: 28px; height: 28px; background-color: #00A8E8; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">AR</div>
+                  <div style="width: 28px; height: 28px; background-color: #FF7F11; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">BS</div>
+                  <div style="width: 28px; height: 28px; background-color: #10B981; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">CD</div>
+                </div>
+                <span style="font-size: 13px; color: #64748B;">3 anggota tim</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prestasi Card 2 - Juara 2 -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #C0C0C0; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Juara 2 - Business Case Competition</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Tim Entrepreneur Muda</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #E6F0F9; color: #0B4F94; padding: 4px 8px; border-radius: 4px;">Nasional</span>
+                  <span style="font-size: 12px; background-color: #FEE2E2; color: #EF4444; padding: 4px 8px; border-radius: 4px;">Bisnis</span>
+                  <span style="font-size: 12px; color: #64748B;">2026</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; margin-left: -4px;">
+                  <div style="width: 28px; height: 28px; background-color: #8B5CF6; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">DP</div>
+                  <div style="width: 28px; height: 28px; background-color: #EC4899; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">EP</div>
+                </div>
+                <span style="font-size: 13px; color: #64748B;">2 anggota tim</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prestasi Card 3 - Juara 1 -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #FFD700; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Juara 1 - Desain Poster Nasional</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Indah Permata</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #E6F0F9; color: #0B4F94; padding: 4px 8px; border-radius: 4px;">Nasional</span>
+                  <span style="font-size: 12px; background-color: #FCE7F3; color: #EC4899; padding: 4px 8px; border-radius: 4px;">Seni</span>
+                  <span style="font-size: 12px; color: #64748B;">2025</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 28px; height: 28px; background-color: #EC4899; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">IP</div>
+                <span style="font-size: 13px; color: #64748B;">Individu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prestasi Card 4 - Gold Medal -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #FFD700; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                  <span style="font-size: 12px; background-color: #FEF3C7; color: #F59E0B; padding: 2px 8px; border-radius: 4px;">Internasional</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Gold Medal - IMO 2025</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Faisal Rahman</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #DBEAFE; color: #3B82F6; padding: 4px 8px; border-radius: 4px;">Akademik</span>
+                  <span style="font-size: 12px; color: #64748B;">2025</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 28px; height: 28px; background-color: #3B82F6; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">FR</div>
+                <span style="font-size: 13px; color: #64748B;">Individu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prestasi Card 5 -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #CD7F32; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Juara 3 - Debat Bahasa Inggris</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Tim Debat Polinema</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #E6F0F9; color: #0B4F94; padding: 4px 8px; border-radius: 4px;">Nasional</span>
+                  <span style="font-size: 12px; color: #64748B;">2025</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; margin-left: -4px;">
+                  <div style="width: 28px; height: 28px; background-color: #14B8A6; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">JK</div>
+                  <div style="width: 28px; height: 28px; background-color: #F97316; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">LM</div>
+                  <div style="width: 28px; height: 28px; background-color: #6366F1; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">NP</div>
+                </div>
+                <span style="font-size: 13px; color: #64748B;">3 anggota tim</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prestasi Card 6 -->
+          <div style="background-color: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 56px; height: 56px; background-color: #FFD700; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg style="width: 28px; height: 28px; color: white;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">Verified</span>
+                </div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Juara 1 - Hackathon Nasional</h3>
+                <p style="font-size: 14px; color: #64748B; margin: 0 0 8px;">Tim Inovasi Digital</p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span style="font-size: 12px; background-color: #E6F0F9; color: #0B4F94; padding: 4px 8px; border-radius: 4px;">Nasional</span>
+                  <span style="font-size: 12px; background-color: #DBEAFE; color: #3B82F6; padding: 4px 8px; border-radius: 4px;">Teknologi</span>
+                  <span style="font-size: 12px; color: #64748B;">2025</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; margin-left: -4px;">
+                  <div style="width: 28px; height: 28px; background-color: #0EA5E9; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">QR</div>
+                  <div style="width: 28px; height: 28px; background-color: #22C55E; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">ST</div>
+                  <div style="width: 28px; height: 28px; background-color: #EAB308; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600;">UV</div>
+                  <div style="width: 28px; height: 28px; background-color: #64748B; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: white; font-weight: 600;">+2</div>
+                </div>
+                <span style="font-size: 13px; color: #64748B;">5 anggota tim</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 32px;">
+          <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; cursor: pointer; color: #64748B;">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button style="padding: 8px 14px; border: none; background-color: #0B4F94; color: white; border-radius: 8px; cursor: pointer; font-weight: 500;">1</button>
+          <button style="padding: 8px 14px; border: 1px solid #e5e7eb; background-color: white; color: #0F172A; border-radius: 8px; cursor: pointer;">2</button>
+          <button style="padding: 8px 14px; border: 1px solid #e5e7eb; background-color: white; color: #0F172A; border-radius: 8px; cursor: pointer;">3</button>
+          <span style="padding: 8px; color: #64748B;">...</span>
+          <button style="padding: 8px 14px; border: 1px solid #e5e7eb; background-color: white; color: #0F172A; border-radius: 8px; cursor: pointer;">58</button>
+          <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; cursor: pointer; color: #0F172A;">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #0B4F94; color: white;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background-color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #0B4F94; font-weight: bold;">APM</span>
+            </div>
+            <div>
+              <span style="font-weight: bold; font-size: 18px;">APM Portal</span>
+              <span style="color: rgba(255,255,255,0.6); font-size: 11px; display: block;">Ajang Prestasi Mahasiswa</span>
+            </div>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">Portal informasi lomba, kompetisi, dan prestasi mahasiswa Polinema.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/lomba" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Lomba & Kompetisi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/prestasi" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Galeri Prestasi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/expo" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Expo & Pameran</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/resources/tips" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Tips & Strategi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/resources/faq" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">apm@polinema.ac.id</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6);">
+        <p style="margin: 0;">Copyright Â© 2026 APM Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

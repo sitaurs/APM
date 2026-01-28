@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Prestasi | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1;">
+    
+    <!-- Page Header -->
+    <div style="background-color: white; border-bottom: 1px solid #f1f1f1;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 24px;">
+        <!-- Breadcrumb -->
+        <nav style="display: flex; align-items: center; gap: 8px; font-size: 14px; margin-bottom: 16px;">
+          <a href="/" style="color: #64748B; text-decoration: none;">Beranda</a>
+          <svg style="width: 16px; height: 16px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <span style="color: #0B4F94; font-weight: 500;">Submission Prestasi</span>
+        </nav>
+        <h1 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; margin: 0 0 4px; color: #0F172A;">Laporkan Prestasi</h1>
+        <p style="color: #64748B; margin: 0;">Dokumentasikan pencapaianmu dan bagikan kepada komunitas Polinema</p>
+      </div>
+    </div>
+
+    <!-- Progress Steps -->
+    <div style="background-color: white; border-bottom: 1px solid #f1f1f1; position: sticky; top: 64px; z-index: 40;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+          
+          <!-- Step 1 - Active -->
+          <button style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #0B4F94; color: white; border: none; border-radius: 9999px; cursor: pointer;">
+            <span style="width: 20px; height: 20px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold;">1</span>
+            <span style="font-size: 14px; font-weight: 500;">Info Lomba</span>
+          </button>
+          
+          <svg style="width: 16px; height: 16px; color: #9ca3af; margin: 0 8px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          
+          <!-- Step 2 - Inactive -->
+          <button style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #f1f5f9; color: #64748B; border: none; border-radius: 9999px; cursor: pointer;">
+            <span style="width: 20px; height: 20px; background-color: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold;">2</span>
+            <span style="font-size: 14px; font-weight: 500;">Tim & Pembimbing</span>
+          </button>
+          
+          <svg style="width: 16px; height: 16px; color: #9ca3af; margin: 0 8px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          
+          <!-- Step 3 - Inactive -->
+          <button style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #f1f5f9; color: #64748B; border: none; border-radius: 9999px; cursor: pointer;">
+            <span style="width: 20px; height: 20px; background-color: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold;">3</span>
+            <span style="font-size: 14px; font-weight: 500;">Upload Dokumen</span>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Content -->
+    <section style="padding: 32px 0;">
+      <div style="max-width: 640px; margin: 0 auto; padding: 0 24px;">
+        
+        <!-- Form Card -->
+        <div style="background-color: white; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 32px;">
+          
+          <!-- Form Header -->
+          <div style="margin-bottom: 24px;">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Informasi Lomba</h2>
+            <p style="color: #64748B; margin: 0; font-size: 14px;">Detail lomba/kompetisi yang diikuti</p>
+          </div>
+          
+          <!-- Form Fields -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Nama Lomba -->
+            <div>
+              <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                Nama Lomba/Kompetisi <span style="color: #EF4444;">*</span>
+              </label>
+              <input type="text" placeholder="contoh: Hackathon Nasional Inovasi 2026" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: border-color 0.2s;">
+            </div>
+            
+            <!-- Penyelenggara -->
+            <div>
+              <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                Penyelenggara <span style="color: #EF4444;">*</span>
+              </label>
+              <input type="text" placeholder="contoh: Kementerian Kominfo RI" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <!-- Kategori & Tingkat -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                  Kategori <span style="color: #EF4444;">*</span>
+                </label>
+                <select style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; background-color: white;">
+                  <option value="">Pilih kategori</option>
+                  <option value="hackathon">Hackathon</option>
+                  <option value="paper">Paper/Karya Ilmiah</option>
+                  <option value="business">Business Plan</option>
+                  <option value="design">UI/UX Design</option>
+                  <option value="data">Data Science</option>
+                  <option value="iot">IoT</option>
+                  <option value="robotics">Robotics</option>
+                  <option value="app">Mobile/Web App</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                  Tingkat <span style="color: #EF4444;">*</span>
+                </label>
+                <select style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; background-color: white;">
+                  <option value="">Pilih tingkat</option>
+                  <option value="internasional">Internasional</option>
+                  <option value="nasional">Nasional</option>
+                  <option value="regional">Regional</option>
+                  <option value="provinsi">Provinsi</option>
+                  <option value="internal">Internal Kampus</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Tanggal & Lokasi -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                  Tanggal Lomba <span style="color: #EF4444;">*</span>
+                </label>
+                <input type="date" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                  Lokasi <span style="color: #EF4444;">*</span>
+                </label>
+                <input type="text" placeholder="Online / Kota" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
+              </div>
+            </div>
+            
+            <!-- Peringkat -->
+            <div>
+              <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                Peringkat/Hasil <span style="color: #EF4444;">*</span>
+              </label>
+              <select style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; background-color: white;">
+                <option value="">Pilih peringkat</option>
+                <option value="juara-1">Juara 1</option>
+                <option value="juara-2">Juara 2</option>
+                <option value="juara-3">Juara 3</option>
+                <option value="juara-harapan">Juara Harapan</option>
+                <option value="finalis">Finalis</option>
+                <option value="best-paper">Best Paper</option>
+                <option value="gold">Gold Medal</option>
+                <option value="silver">Silver Medal</option>
+                <option value="bronze">Bronze Medal</option>
+                <option value="honorable">Honorable Mention</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+            
+            <!-- Deskripsi -->
+            <div>
+              <label style="display: block; font-size: 14px; font-weight: 500; color: #0F172A; margin-bottom: 6px;">
+                Deskripsi Singkat
+              </label>
+              <textarea rows="4" placeholder="Ceritakan tentang prestasi yang kamu raih..." style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; resize: vertical;"></textarea>
+            </div>
+            
+          </div>
+          
+          <!-- Form Actions -->
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #f1f1f1;">
+            <button style="padding: 10px 24px; background-color: #f9fafb; color: #64748B; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer;">
+              Simpan Draft
+            </button>
+            <button style="display: flex; align-items: center; gap: 6px; padding: 10px 24px; background-color: #0B4F94; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer;">
+              Selanjutnya
+              <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+          
+        </div>
+        
+        <!-- Info Card -->
+        <div style="margin-top: 24px; background-color: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 16px;">
+          <div style="display: flex; gap: 12px;">
+            <div style="width: 24px; height: 24px; background-color: #0B4F94; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 14px; height: 14px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; margin: 0 0 4px; color: #0B4F94;">Informasi Penting</h4>
+              <p style="color: #0369A1; margin: 0; font-size: 13px; line-height: 1.5;">
+                Pastikan data yang kamu isi sesuai dengan sertifikat. Verifikasi akan dilakukan oleh tim APM dalam 3-5 hari kerja.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #0B4F94; color: white; margin-top: 48px;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background-color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #0B4F94; font-weight: bold;">APM</span>
+            </div>
+            <div>
+              <span style="font-weight: bold; font-size: 18px;">APM Portal</span>
+              <span style="color: rgba(255,255,255,0.6); font-size: 11px; display: block;">Ajang Prestasi Mahasiswa</span>
+            </div>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">Portal informasi lomba, kompetisi, dan prestasi mahasiswa Polinema.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/lomba" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Lomba & Kompetisi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/prestasi" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Galeri Prestasi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/expo" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Expo & Pameran</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/resources/tips" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Tips & Strategi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/resources/faq" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">apm@polinema.ac.id</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6);">
+        <p style="margin: 0;">Copyright Â© 2026 APM Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
