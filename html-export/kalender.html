@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalender Event | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0B4F94; background-color: rgba(11,79,148,0.05);">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="position: relative; width: 256px;">
+            <input type="text" placeholder="Cari lomba, prestasi, expo..." style="width: 100%; padding: 8px 12px 8px 36px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; background-color: #f9fafb;">
+            <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1;">
+    
+    <!-- Breadcrumb -->
+    <div style="background-color: white; border-bottom: 1px solid #f1f1f1; padding: 12px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <nav style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+          <a href="/" style="color: #64748B; text-decoration: none;">Beranda</a>
+          <svg style="width: 16px; height: 16px; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <span style="color: #0B4F94; font-weight: 500;">Kalender Event</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <section style="background: linear-gradient(to right, #0B4F94, #00A8E8); color: white; padding: 32px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <h1 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 700; margin: 0 0 8px;">Kalender Event</h1>
+        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 16px;">Jadwal lomba, expo, dan event penting yang akan datang</p>
+      </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section style="padding: 24px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+          
+          <!-- Calendar -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 24px;">
+            
+            <!-- Calendar Header -->
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+              <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 600; margin: 0;">Februari 2026</h2>
+              <div style="display: flex; gap: 8px;">
+                <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; cursor: pointer;">
+                  <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button style="padding: 8px 16px; border: none; background-color: #0B4F94; color: white; border-radius: 8px; cursor: pointer; font-weight: 500;">Hari Ini</button>
+                <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; cursor: pointer;">
+                  <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Calendar Grid -->
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;">
+              <!-- Day Headers -->
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">MIN</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">SEN</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">SEL</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">RAB</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">KAM</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">JUM</div>
+              <div style="text-align: center; padding: 8px; font-size: 12px; font-weight: 600; color: #64748B;">SAB</div>
+              
+              <!-- Week 1 -->
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">25</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">26</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">27</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">28</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">29</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">30</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; color: #CBD5E1;">31</div>
+              
+              <!-- Week 2 -->
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">1</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">2</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                3
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #EF4444; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">4</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                5
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #EF4444; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">6</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">7</div>
+              
+              <!-- Week 3 -->
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                8
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #10B981; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">9</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">10</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">11</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">12</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">13</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">14</div>
+              
+              <!-- Week 4 - With Featured Date -->
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; background-color: #0B4F94; color: white; border-radius: 8px; position: relative;">
+                15
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #00A8E8; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                16
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #00A8E8; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                17
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #00A8E8; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">18</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">19</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">20</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">21</div>
+              
+              <!-- Week 5 -->
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                22
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #FF7F11; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                23
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #FF7F11; border-radius: 50%;"></div>
+              </div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">24</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">25</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; background-color: #FEF3C7; border-radius: 8px;">26</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px;">27</div>
+              <div style="text-align: center; padding: 12px 8px; font-size: 14px; position: relative;">
+                28
+                <div style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: #10B981; border-radius: 50%;"></div>
+              </div>
+              
+            </div>
+
+            <!-- Legend -->
+            <div style="display: flex; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #64748B;">
+                <div style="width: 10px; height: 10px; background-color: #EF4444; border-radius: 50%;"></div>
+                Deadline Lomba
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #64748B;">
+                <div style="width: 10px; height: 10px; background-color: #00A8E8; border-radius: 50%;"></div>
+                Expo
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #64748B;">
+                <div style="width: 10px; height: 10px; background-color: #FF7F11; border-radius: 50%;"></div>
+                Startup Weekend
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #64748B;">
+                <div style="width: 10px; height: 10px; background-color: #10B981; border-radius: 50%;"></div>
+                Event Lain
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Upcoming Events -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0;">Event Mendatang</h3>
+            
+            <!-- Event Item 1 -->
+            <div style="background-color: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #EF4444;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 12px; background-color: #FEE2E2; color: #EF4444; padding: 2px 8px; border-radius: 4px; font-weight: 500;">DEADLINE</span>
+              </div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">IoT Innovation Contest</h4>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>3 Februari 2026</span>
+              </div>
+            </div>
+
+            <!-- Event Item 2 -->
+            <div style="background-color: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #EF4444;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 12px; background-color: #FEE2E2; color: #EF4444; padding: 2px 8px; border-radius: 4px; font-weight: 500;">DEADLINE</span>
+              </div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Hackathon Nasional 2026</h4>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>5 Februari 2026</span>
+              </div>
+            </div>
+
+            <!-- Event Item 3 -->
+            <div style="background-color: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #00A8E8;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 12px; background-color: #E0F2FE; color: #0284C7; padding: 2px 8px; border-radius: 4px; font-weight: 500;">EXPO</span>
+              </div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Tech Innovation Expo 2026</h4>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px; margin-bottom: 4px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>15-17 Februari 2026</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span>Jakarta</span>
+              </div>
+            </div>
+
+            <!-- Event Item 4 -->
+            <div style="background-color: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #FF7F11;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 12px; background-color: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-weight: 500;">EVENT</span>
+              </div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Startup Weekend Exhibition</h4>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px; margin-bottom: 4px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>22-23 Februari 2026</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span>Malang</span>
+              </div>
+            </div>
+
+            <!-- Event Item 5 -->
+            <div style="background-color: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #10B981;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 12px; background-color: #D1FAE5; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">DEADLINE</span>
+              </div>
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; margin: 0 0 4px; color: #0F172A;">Olimpiade Sains Nasional</h4>
+              <div style="display: flex; align-items: center; gap: 6px; color: #64748B; font-size: 13px;">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>28 Februari 2026</span>
+              </div>
+            </div>
+
+            <!-- View All Button -->
+            <a href="/kalender/all" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; color: #0B4F94; font-size: 14px; font-weight: 500; text-decoration: none;">
+              Lihat Semua Event
+              <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #0B4F94; color: white; margin-top: 48px;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background-color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #0B4F94; font-weight: bold;">APM</span>
+            </div>
+            <div>
+              <span style="font-weight: bold; font-size: 18px;">APM Portal</span>
+              <span style="color: rgba(255,255,255,0.6); font-size: 11px; display: block;">Ajang Prestasi Mahasiswa</span>
+            </div>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">Portal informasi lomba, kompetisi, dan prestasi mahasiswa Polinema.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/lomba" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Lomba & Kompetisi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/prestasi" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Galeri Prestasi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/expo" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Expo & Pameran</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/resources/tips" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Tips & Strategi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/resources/faq" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">apm@polinema.ac.id</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6);">
+        <p style="margin: 0;">Copyright Â© 2026 APM Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,442 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { ArrowLeft, Save, Loader2 } from 'lucide-react';
+import { RichTextEditor } from '@/components/admin/RichTextEditor';
+
+interface LombaFormData {
+  nama_lomba: string;
+  slug: string;
+  kategori: string;
+  tingkat: string;
+  penyelenggara: string;
+  deadline_pendaftaran: string;
+  tanggal_pelaksanaan: string;
+  lokasi: string;
+  deskripsi: string;
+  persyaratan: string;
+  hadiah: string;
+  link_pendaftaran: string;
+  cp_nama: string;
+  cp_whatsapp: string;
+  biaya_pendaftaran: number;
+  is_featured: boolean;
+  status: string;
+}
+
+const initialFormData: LombaFormData = {
+  nama_lomba: '',
+  slug: '',
+  kategori: '',
+  tingkat: 'nasional',
+  penyelenggara: '',
+  deadline_pendaftaran: '',
+  tanggal_pelaksanaan: '',
+  lokasi: '',
+  deskripsi: '',
+  persyaratan: '',
+  hadiah: '',
+  link_pendaftaran: '',
+  cp_nama: '',
+  cp_whatsapp: '',
+  biaya_pendaftaran: 0,
+  is_featured: false,
+  status: 'upcoming',
+};
+
+const kategoriOptions = [
+  { value: 'teknologi', label: 'Teknologi' },
+  { value: 'bisnis', label: 'Bisnis' },
+  { value: 'desain', label: 'Desain' },
+  { value: 'sains', label: 'Sains' },
+  { value: 'seni', label: 'Seni' },
+  { value: 'olahraga', label: 'Olahraga' },
+  { value: 'lainnya', label: 'Lainnya' },
+];
+
+const tingkatOptions = [
+  { value: 'internasional', label: 'Internasional' },
+  { value: 'nasional', label: 'Nasional' },
+  { value: 'regional', label: 'Regional' },
+  { value: 'provinsi', label: 'Provinsi' },
+  { value: 'kota', label: 'Kota/Kabupaten' },
+  { value: 'kampus', label: 'Kampus' },
+];
+
+const statusOptions = [
+  { value: 'upcoming', label: 'Upcoming' },
+  { value: 'ongoing', label: 'Ongoing' },
+  { value: 'closed', label: 'Closed' },
+];
+
+export default function CreateLombaPage() {
+  const router = useRouter();
+  const [formData, setFormData] = useState<LombaFormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : 
+              type === 'number' ? parseFloat(value) || 0 : value,
+    }));
+
+    // Auto-generate slug from nama_lomba
+    if (name === 'nama_lomba') {
+      const slug = value
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+      setFormData(prev => ({ ...prev, slug }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('/api/admin/lomba', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Gagal membuat lomba');
+      }
+
+      router.push('/admin/lomba');
+      router.refresh();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center gap-4">
+        <Link
+          href="/admin/lomba"
+          className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          <ArrowLeft size={20} />
+        </Link>
+        <div>
+          <h1 className="text-2xl font-bold text-slate-800">Tambah Lomba Baru</h1>
+          <p className="text-slate-600">Isi form untuk menambahkan lomba baru</p>
+        </div>
+      </div>
+
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Error Message */}
+        {error && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
+            {error}
+          </div>
+        )}
+
+        {/* Basic Info */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Informasi Dasar</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Nama Lomba <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="nama_lomba"
+                value={formData.nama_lomba}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Contoh: Hackathon Nasional 2026"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Slug (URL)
+              </label>
+              <input
+                type="text"
+                name="slug"
+                value={formData.slug}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50"
+                placeholder="hackathon-nasional-2026"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Penyelenggara <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="penyelenggara"
+                value={formData.penyelenggara}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Contoh: Kementerian Pendidikan"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Kategori <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="kategori"
+                value={formData.kategori}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Pilih Kategori</option>
+                {kategoriOptions.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Tingkat <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="tingkat"
+                value={formData.tingkat}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {tingkatOptions.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Date & Location */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Tanggal & Lokasi</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Deadline Pendaftaran <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                name="deadline_pendaftaran"
+                value={formData.deadline_pendaftaran}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Tanggal Pelaksanaan <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                name="tanggal_pelaksanaan"
+                value={formData.tanggal_pelaksanaan}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Lokasi
+              </label>
+              <input
+                type="text"
+                name="lokasi"
+                value={formData.lokasi}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Contoh: Jakarta / Online"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Status
+              </label>
+              <select
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {statusOptions.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Description */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Deskripsi Lomba</h2>
+          <RichTextEditor
+            content={formData.deskripsi}
+            onChange={(content) => setFormData(prev => ({ ...prev, deskripsi: content }))}
+            placeholder="Tulis deskripsi lengkap tentang lomba ini..."
+          />
+        </div>
+
+        {/* Requirements */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Persyaratan</h2>
+          <RichTextEditor
+            content={formData.persyaratan}
+            onChange={(content) => setFormData(prev => ({ ...prev, persyaratan: content }))}
+            placeholder="Tulis persyaratan peserta lomba..."
+          />
+        </div>
+
+        {/* Prizes */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Hadiah</h2>
+          <RichTextEditor
+            content={formData.hadiah}
+            onChange={(content) => setFormData(prev => ({ ...prev, hadiah: content }))}
+            placeholder="Tulis informasi hadiah lomba..."
+          />
+        </div>
+
+        {/* Registration & Contact */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Pendaftaran & Kontak</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Link Pendaftaran
+              </label>
+              <input
+                type="url"
+                name="link_pendaftaran"
+                value={formData.link_pendaftaran}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="https://..."
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Biaya Pendaftaran (Rp)
+              </label>
+              <input
+                type="number"
+                name="biaya_pendaftaran"
+                value={formData.biaya_pendaftaran}
+                onChange={handleChange}
+                min="0"
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="0 untuk gratis"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Nama Contact Person
+              </label>
+              <input
+                type="text"
+                name="cp_nama"
+                value={formData.cp_nama}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Nama CP"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                WhatsApp Contact Person
+              </label>
+              <input
+                type="text"
+                name="cp_whatsapp"
+                value={formData.cp_whatsapp}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="08xxxxxxxxxx"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Options */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Opsi</h2>
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="is_featured"
+              checked={formData.is_featured}
+              onChange={handleChange}
+              className="w-5 h-5 text-blue-600 rounded"
+            />
+            <div>
+              <span className="font-medium text-slate-800">Tampilkan di Featured</span>
+              <p className="text-sm text-slate-500">Lomba akan ditampilkan di halaman utama</p>
+            </div>
+          </label>
+        </div>
+
+        {/* Submit */}
+        <div className="flex items-center justify-end gap-4">
+          <Link
+            href="/admin/lomba"
+            className="px-6 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+          >
+            Batal
+          </Link>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 size={18} className="animate-spin" />
+                <span>Menyimpan...</span>
+              </>
+            ) : (
+              <>
+                <Save size={18} />
+                <span>Simpan Lomba</span>
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+

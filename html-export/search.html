@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Pencarian | APM Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #F3F6F9; color: #0F172A; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #FFFFFF; border-bottom: 1px solid #f1f1f1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <div style="width: 32px; height: 32px; background-color: #0B4F94; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">APM</span>
+          </div>
+          <div>
+            <span style="font-weight: bold; color: #0B4F94; font-size: 18px;">APM</span>
+            <span style="color: #64748B; font-size: 11px; display: block; margin-top: -4px;">Portal</span>
+          </div>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 4px;">
+          <a href="/lomba" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Lomba</a>
+          <a href="/prestasi" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Prestasi</a>
+          <a href="/expo" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Expo</a>
+          <a href="/kalender" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Kalender</a>
+          <a href="/resources" style="padding: 8px 12px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #0F172A;">Resources</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="position: relative; width: 256px;">
+            <input type="text" value="hackathon" style="width: 100%; padding: 8px 12px 8px 36px; border: 2px solid #0B4F94; border-radius: 8px; font-size: 14px; background-color: white;">
+            <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #0B4F94;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <a href="/submit" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">Submit Prestasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1;">
+    
+    <!-- Search Header -->
+    <section style="background-color: white; border-bottom: 1px solid #f1f1f1; padding: 24px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <h1 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; margin: 0 0 8px; color: #0F172A;">
+          Hasil Pencarian: <span style="color: #0B4F94;">"hackathon"</span>
+        </h1>
+        <p style="color: #64748B; margin: 0;">Ditemukan 12 hasil</p>
+      </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section style="background-color: white; border-bottom: 1px solid #f1f1f1;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        <div style="display: flex; gap: 0;">
+          <button style="padding: 16px 24px; font-size: 14px; font-weight: 500; color: #0B4F94; border: none; background-color: transparent; border-bottom: 2px solid #0B4F94; cursor: pointer;">
+            Semua (12)
+          </button>
+          <button style="padding: 16px 24px; font-size: 14px; font-weight: 500; color: #64748B; border: none; background-color: transparent; border-bottom: 2px solid transparent; cursor: pointer;">
+            Lomba (5)
+          </button>
+          <button style="padding: 16px 24px; font-size: 14px; font-weight: 500; color: #64748B; border: none; background-color: transparent; border-bottom: 2px solid transparent; cursor: pointer;">
+            Prestasi (4)
+          </button>
+          <button style="padding: 16px 24px; font-size: 14px; font-weight: 500; color: #64748B; border: none; background-color: transparent; border-bottom: 2px solid transparent; cursor: pointer;">
+            Expo (2)
+          </button>
+          <button style="padding: 16px 24px; font-size: 14px; font-weight: 500; color: #64748B; border: none; background-color: transparent; border-bottom: 2px solid transparent; cursor: pointer;">
+            Resources (1)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Results -->
+    <section style="padding: 24px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+        
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          
+          <!-- Result Item 1 - Lomba -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; display: flex; gap: 20px;">
+            <div style="width: 120px; height: 80px; background-color: #EFF6FF; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 32px; height: 32px; color: #0B4F94;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 11px; background-color: #EFF6FF; color: #0B4F94; padding: 2px 8px; border-radius: 4px; font-weight: 500;">LOMBA</span>
+                <span style="font-size: 11px; background-color: #F0FDF4; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">AKTIF</span>
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #0F172A;">
+                <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> Nasional Indonesia 2026
+              </h3>
+              <p style="color: #64748B; margin: 0 0 12px; font-size: 14px;">Kompetisi <mark style="background-color: #FEF3C7; padding: 0 2px;">hackathon</mark> terbesar di Indonesia dengan total hadiah Rp 500 juta</p>
+              <div style="display: flex; align-items: center; gap: 16px; color: #64748B; font-size: 13px;">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  Deadline: 15 Feb 2026
+                </span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Jakarta
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <a href="/lomba/hackathon-nasional-2026" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">
+                Lihat Detail
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Result Item 2 - Prestasi -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; display: flex; gap: 20px;">
+            <div style="width: 120px; height: 80px; background-color: #FEF3C7; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 32px; height: 32px; color: #D97706;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 11px; background-color: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-weight: 500;">PRESTASI</span>
+                <span style="font-size: 11px; background-color: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-weight: 500;">ðŸ¥‡ JUARA 1</span>
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #0F172A;">
+                Juara 1 Global <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> 2025
+              </h3>
+              <p style="color: #64748B; margin: 0 0 12px; font-size: 14px;">Tim Politeknik Negeri Malang meraih juara 1 di ajang Global <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> dengan proyek Smart City</p>
+              <div style="display: flex; align-items: center; gap: 16px; color: #64748B; font-size: 13px;">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                  Tim Alpha
+                </span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  Internasional
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <a href="/prestasi/juara-1-global-hackathon-2025" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: white; color: #0B4F94; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; border: 1px solid #0B4F94;">
+                Lihat Detail
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Result Item 3 - Lomba -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; display: flex; gap: 20px;">
+            <div style="width: 120px; height: 80px; background-color: #EFF6FF; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 32px; height: 32px; color: #0B4F94;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 11px; background-color: #EFF6FF; color: #0B4F94; padding: 2px 8px; border-radius: 4px; font-weight: 500;">LOMBA</span>
+                <span style="font-size: 11px; background-color: #F0FDF4; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">AKTIF</span>
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #0F172A;">
+                Fintech <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> 2026
+              </h3>
+              <p style="color: #64748B; margin: 0 0 12px; font-size: 14px;"><mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> fokus pada solusi teknologi finansial inovatif</p>
+              <div style="display: flex; align-items: center; gap: 16px; color: #64748B; font-size: 13px;">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  Deadline: 20 Feb 2026
+                </span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Online
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <a href="/lomba/fintech-hackathon-2026" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #0B4F94; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">
+                Lihat Detail
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Result Item 4 - Expo -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; display: flex; gap: 20px;">
+            <div style="width: 120px; height: 80px; background-color: #F0FDF4; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 32px; height: 32px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 11px; background-color: #F0FDF4; color: #10B981; padding: 2px 8px; border-radius: 4px; font-weight: 500;">EXPO</span>
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #0F172A;">
+                <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark> Showcase 2026
+              </h3>
+              <p style="color: #64748B; margin: 0 0 12px; font-size: 14px;">Pameran hasil karya para pemenang <mark style="background-color: #FEF3C7; padding: 0 2px;">hackathon</mark> terbaik Indonesia</p>
+              <div style="display: flex; align-items: center; gap: 16px; color: #64748B; font-size: 13px;">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  10-12 Maret 2026
+                </span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Malang
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <a href="/expo/hackathon-showcase-2026" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: white; color: #0B4F94; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; border: 1px solid #0B4F94;">
+                Lihat Detail
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Result Item 5 - Resource -->
+          <div style="background-color: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; display: flex; gap: 20px;">
+            <div style="width: 120px; height: 80px; background-color: #FFF7ED; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg style="width: 32px; height: 32px; color: #FF7F11;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 11px; background-color: #FFF7ED; color: #FF7F11; padding: 2px 8px; border-radius: 4px; font-weight: 500;">PANDUAN</span>
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #0F172A;">
+                Panduan Mengikuti <mark style="background-color: #FEF3C7; padding: 0 2px;">Hackathon</mark>
+              </h3>
+              <p style="color: #64748B; margin: 0 0 12px; font-size: 14px;">Tips dan strategi untuk sukses di kompetisi <mark style="background-color: #FEF3C7; padding: 0 2px;">hackathon</mark></p>
+              <div style="display: flex; align-items: center; gap: 16px; color: #64748B; font-size: 13px;">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                  PDF â€¢ 2.1 MB
+                </span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  678 downloads
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <a href="/resources/panduan-hackathon" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #FF7F11; color: white; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none;">
+                Download
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 32px;">
+          <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; color: #64748B; cursor: pointer;">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button style="padding: 8px 16px; background-color: #0B4F94; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer;">1</button>
+          <button style="padding: 8px 16px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; color: #64748B; cursor: pointer;">2</button>
+          <button style="padding: 8px 12px; border: 1px solid #e5e7eb; background-color: white; border-radius: 8px; color: #64748B; cursor: pointer;">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #0B4F94; color: white; margin-top: 48px;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background-color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #0B4F94; font-weight: bold;">APM</span>
+            </div>
+            <div>
+              <span style="font-weight: bold; font-size: 18px;">APM Portal</span>
+              <span style="color: rgba(255,255,255,0.6); font-size: 11px; display: block;">Ajang Prestasi Mahasiswa</span>
+            </div>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">Portal informasi lomba, kompetisi, dan prestasi mahasiswa Polinema.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/lomba" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Lomba & Kompetisi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/prestasi" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Galeri Prestasi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/expo" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Expo & Pameran</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="/resources/tips" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">Tips & Strategi</a></li>
+            <li style="margin-bottom: 8px;"><a href="/resources/faq" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none;">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: 16px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">apm@polinema.ac.id</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6);">
+        <p style="margin: 0;">Copyright Â© 2026 APM Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
