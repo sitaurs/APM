@@ -6,7 +6,7 @@
 version: '3.8'
 
 services:
-  # Directus CMS
+  # Directus CMS (for static content only: FAQ, Panduan, Templates)
   directus:
     image: directus/directus:latest
     ports:
@@ -20,16 +20,16 @@ services:
       DB_CLIENT: pg
       DB_HOST: postgres
       DB_PORT: 5432
-      DB_DATABASE: ${POSTGRES_DB:-directus}
-      DB_USER: ${POSTGRES_USER:-directus}
+      DB_DATABASE: directus
+      DB_USER: ${POSTGRES_USER:-apm_user}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       
       CACHE_ENABLED: true
       CACHE_TTL: 30m
       CACHE_AUTO_PURGE: true
       
-      ADMIN_EMAIL: admin@apmt.flx.web.id
-      ADMIN_PASSWORD: change-this-admin-password
+      ADMIN_EMAIL: admin@apm.polinema.ac.id
+      ADMIN_PASSWORD: jtdwengdev
       
       CORS_ENABLED: true
       CORS_ORIGIN: "https://apmt.flx.web.id,http://localhost:3000"
@@ -43,11 +43,11 @@ services:
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:8055/server/health || exit 1
       interval: 30s
-      timeout: 5s
+      timeout: 10s
       retries: 5
-      start_period: 30s
+      start_period: 60s
 
-  # PostgreSQL Database
+  # PostgreSQL Database (shared by Directus and Next.js/Prisma)
   postgres:
     image: postgres:15
     ports:
@@ -55,44 +55,49 @@ services:
     volumes:
       - /var/www/apm-data/postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-directus}
-      POSTGRES_USER: ${POSTGRES_USER:-directus}
+      POSTGRES_DB: ${POSTGRES_DB:-apm_portal}
+      POSTGRES_USER: ${POSTGRES_USER:-apm_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=en_US.UTF-8 --lc-ctype=en_US.UTF-8"
     restart: unless-stopped
     healthcheck:
-      test: pg_isready -U directus -d directus
-      interval: 30s
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-apm_user} -d ${POSTGRES_DB:-apm_portal}"]
+      interval: 10s
       timeout: 5s
       retries: 5
       start_period: 30s
 
-  # Next.js App
+  # Next.js App with Prisma (Lomba, Expo, Prestasi use PostgreSQL directly)
   nextjs:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3001:3000"
+    volumes:
+      - /var/www/apm-data/uploads:/app/public/uploads
     environment:
       NODE_ENV: production
       DIRECTUS_URL: http://directus:8055
+      NEXT_PUBLIC_DIRECTUS_URL: https://directus-apmt.flx.web.id
       NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL:-https://apmt.flx.web.id}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-apm_user}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-apm_portal}
       DB_HOST: postgres
       DB_PORT: 5432
-      DB_NAME: ${POSTGRES_DB:-directus}
-      DB_USER: ${POSTGRES_USER:-directus}
+      DB_NAME: ${POSTGRES_DB:-apm_portal}
+      DB_USER: ${POSTGRES_USER:-apm_user}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:-apm-jwt-secret-key-prod}
     depends_on:
-      directus:
+      postgres:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: curl --fail http://localhost:3000/api/health || exit 1
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 30s
-      timeout: 5s
+      timeout: 10s
       retries: 5
-      start_period: 30s
+      start_period: 120s
 
 networks:
   default:
