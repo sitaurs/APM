@@ -28,6 +28,7 @@ type TeamMember = {
   nama: string;
   nim: string;
   prodi: string;
+  whatsapp: string;
 };
 
 export default function SubmissionPage() {
@@ -48,7 +49,7 @@ export default function SubmissionPage() {
     deskripsi: '',
     
     // Tim
-    teamMembers: [{ nama: '', nim: '', prodi: '' }] as TeamMember[],
+    teamMembers: [{ nama: '', nim: '', prodi: '', whatsapp: '' }] as TeamMember[],
     dosenPembimbing: '',
     nipPembimbing: '',
     prodi: '',
@@ -93,7 +94,7 @@ export default function SubmissionPage() {
   const addTeamMember = () => {
     setFormData(prev => ({
       ...prev,
-      teamMembers: [...prev.teamMembers, { nama: '', nim: '', prodi: '' }]
+      teamMembers: [...prev.teamMembers, { nama: '', nim: '', prodi: '', whatsapp: '' }]
     }));
   };
 
@@ -184,9 +185,12 @@ export default function SubmissionPage() {
       submitFormData.append('submitter_name', ketua?.nama || '');
       submitFormData.append('submitter_nim', ketua?.nim || '');
       submitFormData.append('submitter_email', ketua?.nim ? `${ketua.nim}@student.polinema.ac.id` : '');
+      submitFormData.append('submitter_whatsapp', ketua?.whatsapp || '');
       submitFormData.append('tim', JSON.stringify(formData.teamMembers.map((m, i) => ({
         nama: m.nama,
         nim: m.nim,
+        prodi: m.prodi,
+        whatsapp: m.whatsapp,
         role: i === 0 ? 'ketua' : 'anggota'
       }))));
       
@@ -520,7 +524,7 @@ export default function SubmissionPage() {
                         <p className="text-xs font-medium text-text-muted mb-3">
                           Anggota {idx + 1} {idx === 0 && '(Ketua Tim)'}
                         </p>
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           <Input
                             placeholder="Nama Lengkap"
                             value={member.nama}
@@ -554,6 +558,26 @@ export default function SubmissionPage() {
                             onChange={(e) => updateTeamMember(idx, 'prodi', e.target.value)}
                             required
                             error={errors[`teamMember${idx}Prodi`]}
+                          />
+                          <Input
+                            placeholder="WhatsApp (08xxxxxxxxxx)"
+                            value={member.whatsapp}
+                            onChange={(e) => {
+                              const value = e.target.value;
+                              updateTeamMember(idx, 'whatsapp', value);
+                              // Real-time validation for WhatsApp
+                              if (value && !/^08\d{8,12}$/.test(value)) {
+                                setErrors(prev => ({ ...prev, [`teamMember${idx}Whatsapp`]: 'Format: 08xxxxxxxxxx' }));
+                              } else {
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors[`teamMember${idx}Whatsapp`];
+                                  return newErrors;
+                                });
+                              }
+                            }}
+                            required={idx === 0}
+                            error={errors[`teamMember${idx}Whatsapp`]}
                           />
                         </div>
                       </div>

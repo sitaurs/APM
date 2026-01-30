@@ -135,6 +135,9 @@ export async function GET(request: NextRequest) {
     const transformedData = data.map(item => {
       // Find sertifikat from documents
       const sertifikatDoc = item.documents.find(d => d.type === 'sertifikat');
+      // Find dokumentasi photos
+      const dokumentasiDocs = item.documents.filter(d => d.type === 'dokumentasi');
+      const galeri = dokumentasiDocs.map(d => d.file_path);
       
       return {
         id: item.id,
@@ -144,6 +147,8 @@ export async function GET(request: NextRequest) {
         peringkat: item.peringkat,
         tanggal: item.tanggal?.toISOString() || null,
         sertifikatUrl: sertifikatDoc?.file_path || null,
+        thumbnailUrl: galeri[0] || null,
+        galeri: galeri,
         status: item.status,
         reviewerNotes: item.reviewer_notes || '',
         verifiedAt: item.reviewed_at?.toISOString() || null,

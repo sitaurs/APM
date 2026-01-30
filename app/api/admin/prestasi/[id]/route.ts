@@ -116,6 +116,15 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
       })
 
       if (!existingPublished) {
+        // Get documents for thumbnail/galeri
+        const documents = await prisma.prestasiDocument.findMany({
+          where: { submission_id: submissionId },
+        })
+        const dokumentasiDocs = documents.filter(d => d.type === 'dokumentasi')
+        const sertifikatDoc = documents.find(d => d.type === 'sertifikat')
+        const galeri = dokumentasiDocs.map(d => d.file_path)
+        const thumbnail = galeri[0] || null
+        
         // Generate slug
         let slug = generateSlug(submission.judul)
         const existingSlug = await prisma.prestasi.findUnique({ where: { slug } })
@@ -123,7 +132,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
           slug = `${slug}-${Date.now()}`
         }
 
-        // Create published prestasi
+        // Create published prestasi with thumbnail and galeri
         await prisma.prestasi.create({
           data: {
             submission_id: submissionId,
@@ -135,6 +144,9 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
             tahun: submission.tanggal ? new Date(submission.tanggal).getFullYear() : new Date().getFullYear(),
             kategori: submission.kategori,
             deskripsi: submission.deskripsi,
+            thumbnail: thumbnail,
+            galeri: galeri,
+            sertifikat: sertifikatDoc?.file_path || null,
             sertifikat_public: data.sertifikat_public || false,
             is_featured: false,
             is_published: true,

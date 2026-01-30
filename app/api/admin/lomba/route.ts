@@ -86,6 +86,7 @@ export async function GET(request: NextRequest) {
       status: item.status,
       is_featured: item.is_featured,
       is_urgent: item.is_urgent,
+      poster: item.poster,
       created_at: item.created_at,
       updated_at: item.updated_at,
       registration_count: item._count.registrations,
